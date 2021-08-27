@@ -11,15 +11,15 @@ function updatePreview() {
     var defaultRepo = 'https://github.com/legopitstop/datapacks/issues'
     var type = document.getElementById('type');
     var labels = checked('labels')
-    var theme = document.getBODYById('theme');
-    var url = document.getBODYById('repo-url');
+    var theme = document.getElementById('theme');
+    var url = document.getElementById('repo-url');
     if (url.value <= 0) {
-        document.getBODYById('repo-url').value = defaultRepo;
+        document.getElementById('repo-url').value = defaultRepo;
         url = defaultRepo;
     } else { var url = url.value; }
     var src = WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels;
     document.querySelector('.preview-frame').src = src;
-    document.getBODYById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
+    document.getElementById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
 }
 
 function getJSONURL() {

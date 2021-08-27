@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Widget - Preview</title>
+    <link rel="icon" type="text/png" href="/assets/favicon.png">
+    <!-- Plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/modules/LPSCommon.js"></script>
+
+    <!-- Scripts -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="/script.js"></script>
+</head>
+
+<body>
+    <div class="panel-wrapper">
+        <div class="panel-left">
+            <h2 class="center">Widget Preview</h2>
+            <div class="center preview">
+                <iframe class="preview-frame"
+                    src="http://127.0.0.1:5500/widget.html?type=github-issues&url=https://github.com/legopitstop/datapacks/issues&theme=unset&labels=unset"
+                    width="350" height="500" allowtransparency="true" frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+        <div class="panel-right">
+            <h2 class="center">Widget Options</h2>
+            <div onchange="updatePreview()" class="option-wrapper">
+                <p>On the right you can find all the options to customize your widget. On the left you can find a live preview of what the widget will look like. You can copy the embed code and paste it on your website.</p>
+                <div class="option">
+                    <label for="type" title="The type of widget to use. Default: Github Issues">Type: </label>
+                    <select id="type">
+                        <option value="github-issues">Github Issues</option>
+                        <option value="unset">unset</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label for="theme" title="The theme of the widget. Default: dark">Theme: </label>
+                    <select id="theme">
+                        <option value="unset">unset</option>
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label for="labels" title="Whether or not to include lables in the issue title. (Note that colors are not properly working) default: false">Labels: </label>
+                    <input id="labels" type="checkbox">
+                </div>
+                <div class="option">
+                    <label for="repo-url" title="The github repo to use.">Url: </label>
+                    <input type="text" id="repo-url" placeholder="user/repo" value="https://github.com/legopitstop/datapacks/issues">
+                </div>
+                <div class="output">
+                    <label for="frame-output" title="The output iframe to add to your website.">Embed: </label>
+                    <textarea class="codeblock" style="width: 100ch; height: 9ch;" id="frame-output"
+                        readonly><iframe src="http://127.0.0.1:5500/widget.html?type=github-issues&url=https%3A%2F%2Fgithub.com%2Flegopitstop%2Fdatapacks%2Fissues&theme=unset&labels=false" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

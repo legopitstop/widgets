@@ -1,0 +1,51 @@
+{
+    "theme": {
+        "text": "white",
+        "header": "gray",
+        "body": "darkgray",
+        "footer": "gray",
+        "button": "green",
+        "dark": {
+            "parent": "",
+            "text": "white",
+            "header": "gray",
+            "body": "darkgray",
+            "footer": "gray",
+            "button": "green"
+        },
+        "light": {
+            "parent": "",
+            "text": "black",
+            "header": "white",
+            "body": "gray",
+            "footer": "white",
+            "button": "green"
+        }
+    },
+    "header": {
+        "type": "image",
+        "align": "center",
+        "source": "/assets/favicon.png",
+        "url": "https://example.com"
+    },
+    "body": [
+        {
+            "label": "[moremusic] Music discs do not return when stopping the music",
+            "value": "#2 opened 83 days ago by DaCursor",
+            "inline": false,
+            "url": "#1"
+        },
+        {
+            "label": "[TEMPLATE] Example Bug Report",
+            "value": "#1 opened 91 days ago by legopitstop",
+            "inline": false,
+            "url": "#2"
+        }
+    ],
+    "footer": {
+        "type": "button",
+        "align": "right",
+        "text": "New Issue",
+        "url": "https://example.com"
+    }
+}

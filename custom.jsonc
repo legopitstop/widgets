@@ -1,0 +1,73 @@
+{
+    "theme": "dark", // preset theme, dark, light, defualt
+    "$theme": { // semi custom theme
+        // forced theme, will ignore the theme in the URL.
+        "text": "white", // the color of text
+        "header": "gray", // the background color for the header
+        "body": "darkgray", // the background color for the body
+        "footer": "gray", // the background color for the footer
+        "button": "green", // the background color for buttons
+        "dark": { // The theme defined in the url, you can add custom themes.
+            "parent": "",
+            "text": "white",
+            "header": "gray",
+            "body": "darkgray",
+            "footer": "gray",
+            "button": "green"
+        },
+        "light": {
+            "parent": "",
+            "text": "black",
+            "header": "white",
+            "body": "gray",
+            "footer": "white",
+            "button": "green"
+        }
+    },
+    "header": {
+        "parent": "https://example.com/parent.json", // ref to diffrent custom doc. It will always locate the same part. ie parent in header will check in header, parent in body will check body.
+        "type": "image",
+        "align": "center",
+        "source": "https://example.com/icon.png",
+        "clickEvent": {
+            "action": "open_url",
+            "value": "https://example.com"
+        }
+    },
+    "$body": {
+        "parent": "",
+        "type": "label", // label is the default type for the body.
+        "label": "LABEL",
+        "value": "VALUE"
+    },
+    "body": [
+        {
+            "label": "[moremusic] Music discs do not return when stopping the music",
+            "value": "#2 opened 83 days ago by DaCursor",
+            "inline": false,
+            "clickEvent": {
+                "action": "open_url",
+                "value": "https://example.com"
+            }
+        },
+        {
+            "label": "[TEMPLATE] Example Bug Report",
+            "value": "#1 opened 91 days ago by legopitstop",
+            "inline": false,
+            "clickEvent": {
+                "action": "open_url",
+                "value": "https://example.com"
+            }
+        }
+    ],
+    "footer": {
+        "parent": "",
+        "type": "button",
+        "align": "right",
+        "text": "New Issue",
+        "clickEvent": {
+            "action": "open_url",
+            "value": "https://example.com"
+        }
+    }
+}

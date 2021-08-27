@@ -9,7 +9,7 @@ $(document).ready(function () {
 });
 function updatePreview() {
     var defaultRepo = 'https://github.com/legopitstop/datapacks/issues'
-    var type = document.getBODYById('type');
+    var type = document.getElementById('type');
     var labels = checked('labels')
     var theme = document.getBODYById('theme');
     var url = document.getBODYById('repo-url');

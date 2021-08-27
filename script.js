@@ -1,7 +1,6 @@
-// http://127.0.0.1:5500/widget.html?url=https://github.com/legopitstop/Lots-More-Food-Mods/issues&theme=dark
-// <iframe src="https://discord.com/widget?id=479902284810027008&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+// https://legopitstop.github.io/widgets/widget.html?url=https://github.com/legopitstop/Lots-More-Food-Mods/issues&theme=dark
 
-const WEBSITE = 'http://127.0.0.1:5500'
+const WEBSITE = 'https://legopitstop.github.io/widgets/widget.html'
 const JSONURL = parseURLParams(location.search)
 const URL = getJSONURL()
 
@@ -18,9 +17,9 @@ function updatePreview() {
         document.getBODYById('repo-url').value = defaultRepo;
         url = defaultRepo;
     } else { var url = url.value; }
-    var src = WEBSITE + '/widget.html?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels;
+    var src = WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels;
     document.querySelector('.preview-frame').src = src;
-    document.getBODYById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '/widget.html?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
+    document.getBODYById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
 }
 
 function getJSONURL() {

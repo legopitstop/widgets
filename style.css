@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
 
+.material-icons {
+    vertical-align: middle;
+    user-select: none;
+}
+.info {
+    cursor: help;
+    color: #0075ff;
+}
+
+.info:hover {
+    color: #005cc8;
+}
+
 :root {
+    font-size: 16px; /*tmp*/
     --btn-hover: #2ea043;
     --btn: #238636;
 }
@@ -72,6 +86,7 @@ a:hover {
 input,
 select,
 textarea {
+    font-size: 1em;
     border: 1px solid black;
     vertical-align: middle;
     background-color: #1e1e1e;
@@ -103,4 +118,8 @@ textarea:focus {
 
 .codeblock-copy-button:hover {
     background-color: #474748;
+}
+
+.preview {
+    overflow-x:hidden;
 }

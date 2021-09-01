@@ -150,8 +150,6 @@ body {
     color: var(--text)
 }
 
-/* Other Custom */
-
 a {
     color: unset;
     text-decoration: none;

@@ -4,6 +4,7 @@
     vertical-align: middle;
     user-select: none;
 }
+
 .info {
     cursor: help;
     color: #0075ff;
@@ -14,7 +15,6 @@
 }
 
 :root {
-    font-size: 16px; /*tmp*/
     --btn-hover: #2ea043;
     --btn: #238636;
 }
@@ -121,5 +121,5 @@ textarea:focus {
 }
 
 .preview {
-    overflow-x:hidden;
+    overflow-x: hidden;
 }

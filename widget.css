@@ -190,7 +190,6 @@ a:hover {
     color: hsl(var(--label-h), calc(var(--label-s)*1%), calc((var(--label-l) + var(--lighten-by))*1%));
 }
 
-/* Custom */
 .align-center {
     text-align: center;
     margin-left: calc(100vw / 2 - 2em + 6px);

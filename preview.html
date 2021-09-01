@@ -16,7 +16,7 @@
     <div class="panel-wrapper">
         <div class="panel-left">
             <h2 class="center">Widget Preview</h2>
-            <div class="center preview">
+            <div class="preview">
                 <iframe class="preview-frame"
                     src="https://legopitstop.github.io/widgets/widget.html?type=github-issues&url=https://github.com/legopitstop/datapacks/issues&theme=unset&labels=unset"
                     width="350" height="500" allowtransparency="true" frameborder="0"
@@ -28,39 +28,49 @@
             <div onchange="updatePreview()" class="option-wrapper">
                 <p>On the right you can find all the options to customize your widget. On the left you can find a live preview of what the widget will look like. You can copy the embed code and paste it on your website.</p>
                 <div class="option">
-                    <label for="type" title="The type of widget to use. Default: Github Issues">Type: </label>
+                    <label for="type">Type: </label>
                     <select id="type">
                         <option value="github-issues">Github Issues</option>
                         <option value="unset">unset</option>
-                    </select>
+                    </select><span class="material-icons info" title="The type of widget to use. Default: Github Issues">info</span>
                 </div>
                 <div class="option">
-                    <label for="theme" title="The theme of the widget. Default: dark">Theme: </label>
+                    <label for="theme">Theme: </label>
                     <select id="theme">
                         <option value="unset">unset</option>
                         <option value="dark">Dark</option>
                         <option value="light">Light</option>
-                    </select>
+                    </select><span class="material-icons info" title="The theme of the widget. Default: dark">info</span>
+                </div>
+                <div class="option">
+                    <label for="ratio">Ratio: </label>
+                    <input onchange="preserveRatio('other')" id="ratio" onfocus="this.select()" type="number" value="1.43" max="2" min="0.8" step=".01">
+                    <input onchange="preserveRatio('other')" id="useratio" type="checkbox" checked>
+                    <span class="material-icons info" title="Will calculate the width and height while preserving the ratio. (width * ratio = height)">info</span>
                 </div>
                 <div class="option">
                     <label for="width">Width: </label>
-                    <input id="width" type="number" value="350" max="500" min="100" step="10">
+                    <input id="width" onfocus="this.select()" onchange="preserveRatio('width')" type="number" value="350" max="940" min="200" step="10">
+                    <span class="material-icons info" title="The width of the widget. default: 350">info</span>
                 </div>
                 <div class="option">
                     <label for="height">Height: </label>
-                    <input id="height" type="number" value="500" max="500" min="100" step="10">
+                    <input id="height" onfocus="this.select()" onchange="preserveRatio('height')" type="number" value="500" max="1344" min="280" step="10">
+                    <span class="material-icons info" title="The height of the widget. default: 500">info</span>
                 </div>
                 <div class="option">
-                    <label for="labels" title="Whether or not to include lables in the issue title. (Note that colors are not properly working) default: false">Labels: </label>
+                    <label for="labels">Labels: </label>
                     <input id="labels" type="checkbox">
+                    <span class="material-icons info" title="Whether or not to include lables in the issue title. (Note that colors are not properly working) default: false">info</span>
                 </div>
                 <div class="option">
-                    <label for="repo-url" title="The github repo to use.">Url: </label>
-                    <input type="text" id="repo-url" placeholder="user/repo" value="https://github.com/legopitstop/datapacks/issues">
+                    <label for="repo-url">Url: </label>
+                    <input type="text" onfocus="this.select()" id="repo-url" placeholder="user/repo" value="https://github.com/legopitstop/datapacks/issues">
+                    <span class="material-icons info" title="The github repo to use.">info</span>
                 </div>
                 <div class="output">
                     <label for="frame-output" title="The output iframe to add to your website.">Embed: </label>
-                    <textarea class="codeblock" style="width: 100ch; height: 9ch;" id="frame-output"
+                    <textarea onfocus="this.select()" class="codeblock" style="width: 49vw; height: 11ch;" id="frame-output"
                         readonly><iframe src="https://legopitstop.github.io/widgets/widget.html?type=github-issues&url=https%3A%2F%2Fgithub.com%2Flegopitstop%2Fdatapacks%2Fissues&theme=unset&labels=false" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></textarea>
                 </div>
             </div>

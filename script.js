@@ -5,21 +5,57 @@ const JSONURL = parseURLParams(location.search)
 const URL = getJSONURL()
 
 $(document).ready(function () {
+    adjustPreviewSize();
     widget(URL);
 });
+
+
+
+function preserveRatio(input) {
+    var width = document.getElementById('width')
+    var height = document.getElementById('height')
+    var ratio = document.getElementById('ratio')
+    adjustPreviewSize()
+    if (checked('useratio')) {
+        if (input == 'width') {
+            height.value = Math.floor(width.value * ratio.value);
+        } else if (input == 'height') {
+            width.value = Math.floor(height.value / ratio.value);
+        } else if (input == 'other') {
+            height.value = Math.floor(width.value * ratio.value);
+        } else {
+            console.error('unknown ratio input');
+        }
+    }
+}
+
+function adjustPreviewSize() {
+    const width = document.querySelector(".preview-frame").clientWidth;
+    const pWidth = document.querySelector(".preview").clientWidth;
+    var center = (pWidth - width) / 2
+    $('.preview').css({
+        'padding-left': center
+    });
+}
 function updatePreview() {
     var defaultRepo = 'https://github.com/legopitstop/datapacks/issues'
     var type = document.getElementById('type');
     var labels = checked('labels')
     var theme = document.getElementById('theme');
     var url = document.getElementById('repo-url');
+    var width = document.getElementById('width');
+
+
     if (url.value <= 0) {
         document.getElementById('repo-url').value = defaultRepo;
         url = defaultRepo;
     } else { var url = url.value; }
     var src = WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels;
     document.querySelector('.preview-frame').src = src;
-    document.getElementById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
+    document.querySelector('.preview-frame').width = width.value;
+    document.querySelector('.preview-frame').height = height.value;
+    document.getElementById('frame-output').innerHTML = '<iframe src="' + WEBSITE + '?type=' + type.value + '&url=' + encodeURIComponent(url) + '&theme=' + theme.value + '&labels=' + labels + '" width="' + width.value + '" height="' + height.value + '" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>';
+    adjustPreviewSize();
 }
 
 function getJSONURL() {

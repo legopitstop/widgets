@@ -53,7 +53,7 @@ function githubWidget(repo) {
         const FOOTER = $('.widget_footer')
         /* Preset style */
         FOOTER.append('<a href="#" class="btn align-right" target="_blank"><span>New issue</span></a>');
-        HEADER.append('<a href="https://github.com/" target="_blank" class="widget_logo align-center"><img src="./assets/favicon.png" alt=""></a>');
+        HEADER.append('<a href="https://github.com/" target="_blank" class="widget_logo_wrapper align-center"><img class="widget_logo" src="./assets/favicon.png" alt=""></a>');
         //FOOTER.innerHTML = '<a href="#" class="btn" target="_blank"><span>New issue</span></a>';
         /* Other styles */
         repo = repo.replace(/https:\/\/github.com\//g, '').replace(/\/issues.*/g, '')
@@ -72,7 +72,7 @@ function githubWidget(repo) {
             if (JSONURL.labels && JSONURL.labels[0] == 'true') {
                 URLlabels = true
             }
-            BODY.append("There are " + count + " outstanding issues:<br></br>");
+            BODY.append("<div class=\"widget_outstanding_issues\">There are " + count + " outstanding issues:</div>");
             $.each(allIssues, function (i, issue) {
                 var assigneeName = "Unassigned";
                 var assigneeURL = ''
